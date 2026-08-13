@@ -1,0 +1,157 @@
+# Architecture Decisions
+
+This document captures key architectural decisions made during the development of the CV & Case Intelligence Platform.
+
+---
+
+## Decision 001: Use Dataverse as the Primary Data Store
+
+### Decision
+
+Dataverse was selected as the system of record for the solution.
+
+### Reason
+
+Dataverse provides:
+
+- Relational data modeling
+- Security and role management
+- Integration with Power Apps
+- Integration with Power Automate
+- Support for business logic
+
+### Alternatives Considered
+
+- SharePoint Lists
+- SQL Server
+- Excel
+
+### Outcome
+
+Approved
+
+---
+
+## Decision 002: Create a Separate Skill Table
+
+### Decision
+
+Skills are stored in a dedicated Skill table.
+
+### Reason
+
+Skills can be reused across multiple consultants and project cases.
+
+Examples:
+
+- Blue Prism
+- Power Automate
+- Dataverse
+- Azure
+- REST API
+
+This prevents duplication and supports future reporting.
+
+### Outcome
+
+Approved
+
+---
+
+## Decision 003: Use ConsultantSkill as a Junction Table
+
+### Decision
+
+A separate ConsultantSkill table was created between Consultant and Skill.
+
+### Reason
+
+The relationship requires additional attributes:
+
+- Skill Level
+- Years of Experience
+
+A direct many-to-many relationship would not support these attributes.
+
+### Outcome
+
+Approved
+
+---
+
+## Decision 004: Use ProjectCase and Skill Many-to-Many Relationship
+
+### Decision
+
+ProjectCase and Skill were connected using a native Dataverse many-to-many relationship.
+
+### Reason
+
+A project can use multiple skills.
+
+A skill can be used in multiple projects.
+
+No additional attributes are currently needed on the relationship.
+
+### Outcome
+
+Approved
+
+---
+
+## Decision 005: Use Choice Fields for Controlled Vocabulary
+
+### Decision
+
+Several fields were implemented as Choice columns.
+
+### Reason
+
+Ensures consistent data entry and simplifies filtering and reporting.
+
+Examples:
+
+- Industry
+- Seniority
+- Department
+- Skill Category
+- Certification Level
+
+### Outcome
+
+Approved
+
+---
+
+## Decision 006: Use Lookup Columns for Entity Relationships
+
+### Decision
+
+Lookup columns were used to connect related records.
+
+### Reason
+
+Provides normalized data structures and enables relational modeling within Dataverse.
+
+Examples:
+
+- Consultant → Certification
+- Consultant → Project Case
+- Consultant → Skill
+
+### Outcome
+
+Approved
+
+---
+
+## Future Decisions
+
+The following areas may require architectural decisions later:
+
+- Security model
+- Power Automate strategy
+- Copilot Studio integration
+- Environment strategy
+- ALM and deployment
+- Source control for solutions
