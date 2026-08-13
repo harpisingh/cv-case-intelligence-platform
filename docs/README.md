@@ -38,4 +38,56 @@ Current entities include:
 - Skill
 - ConsultantSkill
 - ProjectCase
-- 
+- ConsultantProjectCase
+- Certification
+- ConsultantCertification
+
+Key relationships:
+
+- Consultant ↔ Skill
+- Consultant ↔ ProjectCase
+- Consultant ↔ Certification
+- ProjectCase ↔ Skill
+
+## Project Goals
+
+- Learn Dataverse data modeling
+- Learn Power Apps development
+- Learn Power Automate integration
+- Learn Copilot Studio
+- Learn Application Lifecycle Management (ALM)
+- Learn GitHub documentation practices
+- Prepare for Microsoft PL-400
+
+## Current Status
+
+### Completed
+
+- Solution created
+- Dataverse tables created
+- Relationships configured
+- Initial GitHub repository created
+- Documentation started
+
+### Planned
+
+- Model-Driven App
+- Canvas App
+- Power Automate flows
+- Copilot Studio integration
+- ALM and deployment strategy
+- Solution export and source control
+
+## Repository Structure
+
+```text
+docs/
+├── architecture.md
+└── datamodel.md
+
+README.md
+```
+
+## Author
+
+Created as a personal learning project while preparing for the Microsoft Power Platform Developer (PL-400) certification.
