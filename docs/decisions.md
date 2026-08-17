@@ -155,3 +155,23 @@ The following areas may require architectural decisions later:
 - Environment strategy
 - ALM and deployment
 - Source control for solutions
+
+## Decision 007: Simplify User Experience in Junction Tables
+
+### Decision
+
+Associated views were customized to display business-relevant information instead of technical primary columns.
+
+### Reason
+
+Users are interested in:
+
+- Skill and Level
+- Project Case and Role
+- Certification and Issue Date
+
+rather than internal record names.
+
+### Outcome
+
+Approved
