@@ -78,6 +78,19 @@ Key relationships:
 - ALM and deployment strategy
 - Solution export and source control
 
+### Day 2
+ 
+Completed:
+ 
+- Created model-driven application
+- Added consultant records
+- Added skills
+- Added certifications
+- Added project references
+- Configured lookup relationships
+- Configured many-to-many relationships
+- Customized associated views
+
 ## Repository Structure
 
 ```text
