@@ -78,19 +78,6 @@ Key relationships:
 - ALM and deployment strategy
 - Solution export and source control
 
-### Day 2
- 
-Completed:
- 
-- Created model-driven application
-- Added consultant records
-- Added skills
-- Added certifications
-- Added project references
-- Configured lookup relationships
-- Configured many-to-many relationships
-- Customized associated views
-
 ## Repository Structure
 
 ```text
@@ -104,3 +91,30 @@ README.md
 ## Author
 
 Created as a personal learning project while preparing for the Microsoft Power Platform Developer (PL-400) certification.
+
+
+### Day 2
+ 
+Completed:
+ 
+- Created model-driven application
+- Added consultant records
+- Added skills
+- Added certifications
+- Added project references
+- Configured lookup relationships
+- Configured many-to-many relationships
+- Customized associated views
+
+## Day 3 Progress
+
+### Completed
+
+- Customized Consultant Main Form
+- Organized consultant information into logical sections
+- Customized Active Consultants view
+- Customized ConsultantSkill associated views
+- Implemented and tested Business Rules
+- Improved consultant search experience through relationship views
+- Evaluated user journey for finding consultants based on skills and project experience
+- Identified opportunities for Canvas Apps to improve search and navigation
