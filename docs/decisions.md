@@ -175,3 +175,24 @@ rather than internal record names.
 ### Outcome
 
 Approved
+
+## Decision 008: Professional Summary Recommendation Strategy
+
+### Decision
+
+ProfessionalSummary is configured as "Recommended" by default.
+
+A business rule removes the recommendation when:
+
+- Title = Consultant
+- Seniority = Junior
+
+### Reason
+
+Most consultant profiles benefit from having a professional summary, as it helps sales managers and staffing coordinators evaluate consultant experience and expertise.
+
+However, junior consultants may have limited project and consulting experience and should not be encouraged to provide detailed profile summaries before sufficient experience has been gained.
+
+### Outcome
+
+Approved
