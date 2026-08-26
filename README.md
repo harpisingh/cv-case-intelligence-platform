@@ -118,3 +118,25 @@ Completed:
 - Improved consultant search experience through relationship views
 - Evaluated user journey for finding consultants based on skills and project experience
 - Identified opportunities for Canvas Apps to improve search and navigation
+
+- ## Day 4 Progress
+
+### Completed
+
+- Created first Canvas App: CV & Case Finder
+- Connected Canvas App to Dataverse
+- Displayed consultant records in a Gallery
+- Implemented consultant search using Power Fx
+- Implemented title-based filtering
+- Added alphabetical sorting of consultant records
+- Created Consultant Detail screen
+- Implemented navigation between screens
+- Explored delegation warnings and query scalability considerations
+- Investigated differences between Choice and Choices columns in Dataverse
+
+### Key Learnings
+
+- Canvas Apps provide a customizable user experience on top of Dataverse
+- Power Fx controls application behavior through formulas and control properties
+- Delegation impacts scalability and query performance
+- Choice and multi-select Choices columns behave differently in Canvas Apps
