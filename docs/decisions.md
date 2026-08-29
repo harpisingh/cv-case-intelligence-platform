@@ -196,3 +196,47 @@ However, junior consultants may have limited project and consulting experience a
 ### Outcome
 
 Approved
+
+# Architectural Decisions
+
+## AD-005: Trigger Filtering in Power Automate
+
+Decision:
+The Consultant Profile Review flow uses trigger filtering instead of post-trigger conditions.
+
+Reason:
+Reduces unnecessary flow executions and prevents additional flow runs when records are updated by the flow itself.
+
+Result:
+Improved performance and reduced flow consumption.
+
+---
+
+## AD-006: Profile Review Status Automation
+
+Decision:
+ProfileStatus is automatically updated by Power Automate.
+
+Business Rules:
+
+Ready for Review
+→ Approved
+
+Ready for Review
+→ Needs Update
+
+Reason:
+Ensures profile quality is validated consistently.
+
+---
+
+## AD-007: Teams-Based Error Notifications
+
+Decision:
+Microsoft Teams notifications are used instead of email notifications.
+
+Reason:
+Dataverse and Outlook connectors were blocked by tenant DLP policies.
+
+Result:
+Error information is delivered directly in Teams while remaining compliant with platform governance policies.
