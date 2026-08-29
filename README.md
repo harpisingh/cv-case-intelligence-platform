@@ -166,3 +166,7 @@ Implemented features:
 - Teams-based error notifications
 
 This marks the first end-to-end business process automation in the solution.
+
+## Day 6
+
+Git, VS Code and Power Platform CLI setup completed.
