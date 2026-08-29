@@ -140,3 +140,29 @@ Completed:
 - Power Fx controls application behavior through formulas and control properties
 - Delegation impacts scalability and query performance
 - Choice and multi-select Choices columns behave differently in Canvas Apps
+
+## Latest Progress (Day 5)
+
+Implemented the first business process automation using Power Automate.
+
+### Consultant Profile Review Workflow
+
+A Dataverse-triggered cloud flow was created to automate consultant profile reviews.
+
+Process:
+
+Ready for Review
+→ Validation
+→ Approved / Needs Update
+
+Implemented features:
+
+- Dataverse trigger
+- Trigger filtering
+- Choice field handling
+- Automatic status updates
+- Automatic review timestamp updates
+- Error handling using TRY/CATCH pattern
+- Teams-based error notifications
+
+This marks the first end-to-end business process automation in the solution.
