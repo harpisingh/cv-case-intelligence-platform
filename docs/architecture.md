@@ -73,3 +73,28 @@ A project case can require multiple skills.
 A skill can be used in multiple project cases.
 
 No additional attributes are currently required on the relationship.
+
+## Automation Layer
+
+Power Automate is used to implement server-side business processes.
+
+### Consultant Profile Review Flow
+
+Trigger:
+- Dataverse row modified
+- Consultant table
+- ProfileStatus changed
+
+Validation:
+- Name exists
+- Title exists
+- ProfessionalSummary exists
+
+Outcomes:
+- Approved
+- Needs Update
+
+Additional Functions:
+- LastReviewed updated using utcNow()
+- Error handling using TRY/CATCH scopes
+- Teams notifications for failed executions
