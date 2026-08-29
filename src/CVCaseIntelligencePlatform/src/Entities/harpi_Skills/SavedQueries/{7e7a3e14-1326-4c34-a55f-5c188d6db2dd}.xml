@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{7e7a3e14-1326-4c34-a55f-5c188d6db2dd}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="harpi_skillname" select="1" icon="1" preview="1">
+        <row name="result" id="harpi_skillsid">
+          <cell name="harpi_skillname" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="harpi_skills">
+          <attribute name="harpi_skillsid" />
+          <attribute name="harpi_skillname" />
+          <attribute name="createdon" />
+          <order attribute="harpi_skillname" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive Skill" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

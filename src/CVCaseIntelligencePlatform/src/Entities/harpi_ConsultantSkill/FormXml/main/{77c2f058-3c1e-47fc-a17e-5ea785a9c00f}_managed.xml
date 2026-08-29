@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{77c2f058-3c1e-47fc-a17e-5ea785a9c00f}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form>
+      <tabs>
+        <tab verticallayout="true" id="{ead1ea0e-67fb-47eb-813b-a9afafd92c36}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{e6c0bff3-29e5-4dc8-8f93-656966e6be12}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{da4e7034-b7ec-4472-b96b-1c5bbabb37b6}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_consultantskillname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="harpi_consultantskillname" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1beaa8de-6339-4c4e-8d9b-e31f065dd185}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{f32fd52f-f055-4fd3-a0b2-d070b508b80e}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_consultant" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="harpi_consultant" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3f151c8a-4d8f-47dc-88d5-5cb6c53afeea}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_skill" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="harpi_skill" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3facc5d1-3c14-44a8-919b-d832ac33b376}">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_level" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="harpi_level" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

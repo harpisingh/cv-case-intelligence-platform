@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{c87e29c8-bda7-40aa-a98c-4fbab88671a6}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{79573078-cb95-4894-9cbc-6e7fa22cdd63}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{5beb2fec-1331-4c5f-bfc9-3e75bad80709}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{98ced340-8e37-4961-8f98-dff97de1cd4f}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="harpi_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b501c506-80ce-4125-b2ca-55530c41d56b}">
+                        <labels>
+                          <label description="Title" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_title" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="harpi_title" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{10cbdf9f-c1e2-4bd4-aa82-1d13d7249acc}">
+                        <labels>
+                          <label description="Seniority" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_seniority" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="harpi_seniority" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="{79573078-cb95-4894-9cbc-6e7fa22cdd63}_section_2" showlabel="false" showbar="false" locklevel="0" id="{3491ad95-0247-7d41-c634-38e8aa46d354}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="Organization" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{eea3585f-fc66-4fea-b961-c3e3efe363d1}">
+                        <labels>
+                          <label description="Office" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_office" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="harpi_office" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{eceda92e-93d3-47fc-a6b5-6e040e1186ef}">
+                        <labels>
+                          <label description="Department" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_department" classid="{4aa28ab7-9c13-4f57-a73d-ad894d048b5f}" datafieldname="harpi_department" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="{79573078-cb95-4894-9cbc-6e7fa22cdd63}_section_3" showlabel="false" showbar="false" locklevel="0" id="{e3a478d7-e1b0-48c0-4b2a-a54c962913ed}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="Profile" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ff5f7064-8e88-476b-b623-2b4345108858}">
+                        <labels>
+                          <label description="ProfessionalSummary" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_professionalsummary" classid="{4273edbd-ac1d-40d3-9fb2-095c621b552d}" datafieldname="harpi_professionalsummary" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="{79573078-cb95-4894-9cbc-6e7fa22cdd63}_section_4" showlabel="false" showbar="false" locklevel="0" id="{146a1332-1e36-62cd-bad3-e466c69cd9ce}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="System" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{70731155-b8b9-416f-936d-c64b70f23e2f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="ProfileStatus" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_profilestatus" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="harpi_profilestatus" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{93dbfbf5-a9c8-4bf8-b8b7-8ec995119026}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="LastReviewed" languagecode="1033" />
+                        </labels>
+                        <control id="harpi_lastreviewed" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="harpi_lastreviewed" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e340b36a-6bef-476e-ac65-b71ae26e6042}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar />
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <header id="{47452891-0685-4f54-8469-c38f48168633}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{1bed13a8-428d-4d8f-92c9-73b0a5076748}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{52b4a98f-edf8-42f7-b5f3-5777e94d1138}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{72af51e0-0bfd-46b6-b081-9fc3df4de3bc}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{bb8de5b0-dc32-4947-9026-9dccd99b2158}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{29bc5cc6-f6ae-4f11-9af7-ebbd0b521811}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{32c95fa2-b2c9-4be2-9f43-3dbcb8be301d}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{cd576fa6-fa96-4b25-86c4-844c89665522}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

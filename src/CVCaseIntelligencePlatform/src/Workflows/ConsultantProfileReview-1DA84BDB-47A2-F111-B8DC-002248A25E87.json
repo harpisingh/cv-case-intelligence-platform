@@ -1,0 +1,236 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_teams": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "harpi_sharedteams_5bb60"
+        },
+        "api": {
+          "name": "shared_teams"
+        }
+      },
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "harpi_sharedcommondataserviceforapps_43549"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "Når_en_rad_legges_til,_endres_eller_slettes": {
+          "metadata": {
+            "operationMetadataId": "85322225-c2d7-4ba7-8b66-153bbc1641ae"
+          },
+          "type": "OpenApiConnectionWebhook",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "SubscribeWebhookTrigger",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "subscriptionRequest/message": 3,
+              "subscriptionRequest/entityname": "harpi_consultant",
+              "subscriptionRequest/scope": 4,
+              "subscriptionRequest/filteringattributes": "harpi_profilestatus",
+              "subscriptionRequest/filterexpression": "harpi_profilestatus eq 312820001"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      },
+      "actions": {
+        "Catch": {
+          "actions": {
+            "Filter_array": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "046a1aba-3a05-4737-bc64-be74af67b2fc"
+              },
+              "type": "Query",
+              "inputs": {
+                "from": "@result('TRY')",
+                "where": "@or( equals(item()?['status'], 'Failed'), equals(item()?['status'], 'TimedOut') )"
+              }
+            },
+            "Create_HTML_table": {
+              "runAfter": {
+                "Select_-_Output": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "2ee8709b-c9fc-49b3-a9c8-6f3157d85d6f"
+              },
+              "type": "Table",
+              "inputs": {
+                "from": "@body('Select_-_Output')",
+                "format": "HTML"
+              }
+            },
+            "Terminate": {
+              "runAfter": {
+                "Legg_inn_en_melding_til_meg_selv": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "82ec80ee-2a14-4e9f-be31-361c7130e24d"
+              },
+              "type": "Terminate",
+              "inputs": {
+                "runStatus": "Failed",
+                "runError": {
+                  "message": "Message:\nConsultant Profile Review failed. See error notification email for details."
+                }
+              }
+            },
+            "Legg_inn_en_melding_til_meg_selv": {
+              "runAfter": {
+                "Create_HTML_table": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "a4f6f5bb-771c-47cd-86da-5abcb693f97c"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_teams",
+                  "operationId": "PostMessageToSelf",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_teams"
+                },
+                "parameters": {
+                  "body/body/content": "<h2>❌ Power Automate Error</h2>\n\n<table border=\"1\">\n<tr>\n<td><b>Flow</b></td>\n<td>@{workflow()?['tags']['flowDisplayName']}</td>\n</tr>\n\n<tr>\n<td><b>Time</b></td>\n<td>@{utcNow()}</td>\n</tr>\n\n<tr>\n<td><b>Consultant</b></td>\n<td>@{triggerOutputs()?['body/harpi_name']}</td>\n</tr>\n</table>\n\n<br/>\n\n<h3>Error Details</h3>\n@{body('Create_HTML_table')}",
+                  "body/body/contentType": "html"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            },
+            "Select_-_Output": {
+              "runAfter": {
+                "Filter_array": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "511b0afd-60f4-4c2a-9865-ba5b038ecbca"
+              },
+              "type": "Select",
+              "inputs": {
+                "from": "@body('Filter_array')",
+                "select": {
+                  "Action": "@item()?['name']",
+                  "Status": "@item()?['status']",
+                  "Error Code": "@item()?['error']?['code']",
+                  "Error Message": "@item()?['error']?['message']"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Try": [
+              "Failed",
+              "Skipped",
+              "TimedOut"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b18601eb-62e4-4655-a284-058360c6498f"
+          },
+          "type": "Scope"
+        },
+        "Try": {
+          "actions": {
+            "All_fields_exists": {
+              "actions": {
+                "Oppdater_rad_-_Approved": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "30425d5f-93e9-4573-99c9-b964df1b56e0"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "UpdateOnlyRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "harpi_consultants",
+                      "recordId": "@triggerOutputs()?['body/harpi_consultantid']",
+                      "item/harpi_lastreviewed": "@utcNow()",
+                      "item/harpi_profilestatus": 312820002
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              },
+              "runAfter": {},
+              "else": {
+                "actions": {
+                  "Oppdater_rad_-_Need_Update": {
+                    "runAfter": {},
+                    "metadata": {
+                      "operationMetadataId": "58637fef-c1a2-4148-a886-ab56befb790e"
+                    },
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_commondataserviceforapps",
+                        "operationId": "UpdateOnlyRecord",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                      },
+                      "parameters": {
+                        "entityName": "harpi_consultants",
+                        "recordId": "test",
+                        "item/harpi_lastreviewed": "@utcNow()",
+                        "item/harpi_profilestatus": 312820003
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    }
+                  }
+                }
+              },
+              "expression": {
+                "equals": [
+                  "@and(\r\n    not(empty(triggerOutputs()?['body/harpi_name'])),\r\n    not(empty(triggerOutputs()?['body/harpi_professionalsummary'])),\r\n    not(empty(string(triggerOutputs()?['body/harpi_title'])))\r\n)",
+                  true
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "f2f5011c-20d9-4a56-a806-3e1a32b1c352"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "904c1ca1-1e83-45bb-a1bc-2635e85af6d8"
+          },
+          "type": "Scope"
+        }
+      }
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

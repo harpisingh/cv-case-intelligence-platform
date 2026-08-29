@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{f49fabcc-af7d-41e9-9177-236055cf24ae}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="harpi_consultantcertification1" select="1" icon="1" preview="1">
+        <row name="result" id="harpi_consultantcertificationid">
+          <cell name="harpi_consultantcertification1" width="300" />
+          <cell name="harpi_consultant" width="150" />
+          <cell name="harpi_certification" width="150" />
+          <cell name="harpi_issueddate" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="harpi_consultantcertification">
+          <attribute name="harpi_consultantcertificationid" />
+          <attribute name="harpi_consultantcertification1" />
+          <attribute name="createdon" />
+          <order attribute="harpi_consultantcertification1" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="harpi_consultant" />
+          <attribute name="harpi_certification" />
+          <attribute name="harpi_issueddate" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active ConsultantCertification" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

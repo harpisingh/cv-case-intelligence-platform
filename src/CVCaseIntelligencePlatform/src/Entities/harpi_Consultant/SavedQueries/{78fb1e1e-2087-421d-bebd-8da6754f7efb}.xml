@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{78fb1e1e-2087-421d-bebd-8da6754f7efb}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="harpi_name" select="1" icon="1" preview="1">
+        <row name="result" id="harpi_consultantid">
+          <cell name="harpi_name" width="300" />
+          <cell name="harpi_title" width="150" />
+          <cell name="harpi_department" width="150" />
+          <cell name="harpi_seniority" width="150" />
+          <cell name="harpi_office" width="150" />
+          <cell name="harpi_professionalsummary" width="150" />
+          <cell name="harpi_profilestatus" width="113" />
+          <cell name="harpi_lastreviewed" width="121" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="harpi_consultant">
+          <attribute name="harpi_consultantid" />
+          <attribute name="harpi_name" />
+          <attribute name="createdon" />
+          <order attribute="harpi_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="harpi_title" />
+          <attribute name="harpi_department" />
+          <attribute name="harpi_seniority" />
+          <attribute name="harpi_professionalsummary" />
+          <attribute name="harpi_office" />
+          <attribute name="harpi_profilestatus" />
+          <attribute name="harpi_lastreviewed" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Consultant" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

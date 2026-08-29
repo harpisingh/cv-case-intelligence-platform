@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{977ece5a-a637-448e-af27-885579a3dbce}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="harpi_name" select="1" icon="1" preview="1">
+        <row name="result" id="harpi_consultantid">
+          <cell name="harpi_name" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="harpi_consultant">
+          <attribute name="harpi_consultantid" />
+          <attribute name="harpi_name" />
+          <attribute name="createdon" />
+          <order attribute="harpi_name" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="1" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Inactive Consultant" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

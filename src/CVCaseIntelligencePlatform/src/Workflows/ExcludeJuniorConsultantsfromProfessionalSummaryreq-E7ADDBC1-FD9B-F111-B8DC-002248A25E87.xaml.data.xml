@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{e7addbc1-fd9b-f111-b8dc-002248a25e87}" Name="Exclude Junior Consultants from ProfessionalSummary requirement" Description="ProfessionalSummary is optional only when a consultant has the title &quot;Consultant&quot; and the seniority level &quot;Junior&quot;. For all other consultant profiles, a ProfessionalSummary is required." xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <XamlFileName>/Workflows/ExcludeJuniorConsultantsfromProfessionalSummaryreq-E7ADDBC1-FD9B-F111-B8DC-002248A25E87.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>2</Category>
+  <Mode>1</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <BusinessProcessType>0</BusinessProcessType>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>2</ProcessTriggerScope>
+  <ModernFlowType>0</ModernFlowType>
+  <PrimaryEntity>harpi_Consultant</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="Exclude Junior Consultants from ProfessionalSummary requirement" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="ProfessionalSummary is optional only when a consultant has the title &quot;Consultant&quot; and the seniority level &quot;Junior&quot;. For all other consultant profiles, a ProfessionalSummary is required." />
+  </Descriptions>
+</Workflow>
