@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <WebResourceId>{cc31bbf3-55a4-f111-b8de-7ced8d42a0a8}</WebResourceId>
+  <Name>harpi_consultant.js</Name>
+  <DisplayName>Consultant Client Script</DisplayName>
+  <Description>Client-side JavaScript for Consultant form.</Description>
+  <LanguageCode>0</LanguageCode>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0.0.1</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/harpi_consultantjsCC31BBF3-55A4-F111-B8DE-7CED8D42A0A8</FileName>
+</WebResource>

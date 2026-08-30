@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{72c6cf78-539e-4c2e-a1a7-7534ed9daea5}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="SkillName" languagecode="1033" />
                         </labels>
                         <control id="harpi_skillname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="harpi_skillname" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{6978732d-fb12-442b-9aac-40c828db328a}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>
@@ -38,7 +38,7 @@
                     <row>
                       <cell id="{a8ddc98e-8787-4f52-bd01-fb148f23e5b1}" visible="false">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="ProjectCaseSkill" languagecode="1033" />
                         </labels>
                         <control id="harpi_projectcaseskill" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="harpi_projectcaseskill" />
                       </cell>
@@ -46,7 +46,7 @@
                     <row>
                       <cell id="{14a91b1f-a593-4aa5-bc0b-c4f9f0a00dbe}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Category" languagecode="1033" />
                         </labels>
                         <control id="harpi_category" classid="{4aa28ab7-9c13-4f57-a73d-ad894d048b5f}" datafieldname="harpi_category" />
                       </cell>

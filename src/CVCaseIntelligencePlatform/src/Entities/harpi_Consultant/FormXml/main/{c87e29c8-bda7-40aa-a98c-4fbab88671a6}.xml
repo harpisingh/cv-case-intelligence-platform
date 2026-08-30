@@ -5,7 +5,7 @@
     <IntroducedVersion>1.0</IntroducedVersion>
     <FormPresentation>1</FormPresentation>
     <FormActivationState>1</FormActivationState>
-    <form headerdensity="HighWithControls">
+    <form headerdensity="HighWithControls" shownavigationbar="true" showImage="false" maxWidth="1920">
       <tabs>
         <tab verticallayout="true" id="{79573078-cb95-4894-9cbc-6e7fa22cdd63}" IsUserDefined="1">
           <labels>
@@ -191,6 +191,26 @@
           </row>
         </rows>
       </footer>
+      <formLibraries>
+        <Library name="harpi_consultant.js" libraryUniqueId="{3b4d041c-d513-5264-05ea-87132278e1b4}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler functionName="CVCI.Consultant.onLoad" libraryName="harpi_consultant.js" handlerUniqueId="{9ce5db33-32be-aa5a-324e-baa3e0321a38}" enabled="true" parameters=" " passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onchange" application="false" active="false" attribute="harpi_profilestatus">
+          <Handlers>
+            <Handler functionName="CVCI.Consultant.onProfileStatusChange" libraryName="harpi_consultant.js" handlerUniqueId="{ba88a6f9-9855-45c7-a62f-d8c83ffc0e88}" enabled="true" parameters="" passExecutionContext="true" />
+          </Handlers>
+        </event>
+        <event name="onsave" application="false" active="false">
+          <Handlers>
+            <Handler functionName="CVCI.Consultant.onSave" libraryName="harpi_consultant.js" handlerUniqueId="{f3eb26d2-20f1-4fbf-b987-902ca9d8e33d}" enabled="true" parameters="" passExecutionContext="false" />
+          </Handlers>
+        </event>
+      </events>
       <DisplayConditions Order="0" FallbackForm="true">
         <Everyone />
       </DisplayConditions>

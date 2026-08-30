@@ -6,6 +6,7 @@
   <EntityRelationship Name="business_unit_harpi_consultantprojectcase" />
   <EntityRelationship Name="business_unit_harpi_consultantskill" />
   <EntityRelationship Name="business_unit_harpi_projectcase" />
+  <EntityRelationship Name="business_unit_harpi_projectcaseskill" />
   <EntityRelationship Name="business_unit_harpi_skills" />
   <EntityRelationship Name="crcdb_harpi_ProjectCase_harpi_Skills_harpi_Skills" />
   <EntityRelationship Name="harpi_consultantcertification_Consultant_harpi_consultant" />
@@ -14,6 +15,7 @@
   <EntityRelationship Name="harpi_ConsultantProjectCase_harpi_ProjectCase" />
   <EntityRelationship Name="harpi_consultantskill_Consultant_harpi_consultant" />
   <EntityRelationship Name="harpi_consultantskill_Skill_harpi_consultantskill" />
+  <EntityRelationship Name="harpi_ProjectCaseSkill_harpi_projectcase" />
   <EntityRelationship Name="harpi_skills_ProjectCaseSkill_harpi_projectcaseskill" />
   <EntityRelationship Name="lk_harpi_certification_createdby" />
   <EntityRelationship Name="lk_harpi_certification_modifiedby" />
@@ -27,6 +29,8 @@
   <EntityRelationship Name="lk_harpi_consultantskill_modifiedby" />
   <EntityRelationship Name="lk_harpi_projectcase_createdby" />
   <EntityRelationship Name="lk_harpi_projectcase_modifiedby" />
+  <EntityRelationship Name="lk_harpi_projectcaseskill_createdby" />
+  <EntityRelationship Name="lk_harpi_projectcaseskill_modifiedby" />
   <EntityRelationship Name="lk_harpi_skills_createdby" />
   <EntityRelationship Name="lk_harpi_skills_modifiedby" />
   <EntityRelationship Name="owner_harpi_certification" />
@@ -35,6 +39,7 @@
   <EntityRelationship Name="owner_harpi_consultantprojectcase" />
   <EntityRelationship Name="owner_harpi_consultantskill" />
   <EntityRelationship Name="owner_harpi_projectcase" />
+  <EntityRelationship Name="owner_harpi_projectcaseskill" />
   <EntityRelationship Name="owner_harpi_skills" />
   <EntityRelationship Name="team_harpi_certification" />
   <EntityRelationship Name="team_harpi_consultant" />
@@ -42,6 +47,7 @@
   <EntityRelationship Name="team_harpi_consultantprojectcase" />
   <EntityRelationship Name="team_harpi_consultantskill" />
   <EntityRelationship Name="team_harpi_projectcase" />
+  <EntityRelationship Name="team_harpi_projectcaseskill" />
   <EntityRelationship Name="team_harpi_skills" />
   <EntityRelationship Name="user_harpi_certification" />
   <EntityRelationship Name="user_harpi_consultant" />
@@ -49,5 +55,6 @@
   <EntityRelationship Name="user_harpi_consultantprojectcase" />
   <EntityRelationship Name="user_harpi_consultantskill" />
   <EntityRelationship Name="user_harpi_projectcase" />
+  <EntityRelationship Name="user_harpi_projectcaseskill" />
   <EntityRelationship Name="user_harpi_skills" />
 </EntityRelationships>

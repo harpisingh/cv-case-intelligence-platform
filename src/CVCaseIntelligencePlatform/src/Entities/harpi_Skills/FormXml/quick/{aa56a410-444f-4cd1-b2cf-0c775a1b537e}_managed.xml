@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{6f676675-29ce-4455-97a8-eed94f8c7297}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="SkillName" languagecode="1033" />
                         </labels>
                         <control id="harpi_skillname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="harpi_skillname" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{33bfcfae-0012-4738-ae13-4deb2b0d428d}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>

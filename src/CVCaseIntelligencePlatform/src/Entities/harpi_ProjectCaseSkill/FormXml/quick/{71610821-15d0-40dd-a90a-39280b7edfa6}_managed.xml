@@ -1,34 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <systemform>
-    <formid>{8d082ea4-bf8f-43bf-8505-996aed3a6dc6}</formid>
+    <formid>{71610821-15d0-40dd-a90a-39280b7edfa6}</formid>
     <IntroducedVersion>1.0</IntroducedVersion>
     <FormPresentation>1</FormPresentation>
     <FormActivationState>1</FormActivationState>
     <form>
       <tabs>
-        <tab verticallayout="true" id="{0709599a-a411-4440-ba06-29def382461e}" IsUserDefined="1">
+        <tab verticallayout="true" id="{1c11a5ea-72df-44ff-bdba-b95c0f24f96e}" IsUserDefined="1">
           <labels>
             <label description="" languagecode="1033" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
-                <section showlabel="false" showbar="false" IsUserDefined="0" id="{0ea1c6f1-bfe0-4836-b336-ad99e175406f}">
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{35080394-3c66-45ce-9243-4281cac4a6fa}">
                   <labels>
                     <label description="GENERAL" languagecode="1033" />
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{59c43c7c-3a46-41d0-ac61-73c05db992f3}">
+                      <cell id="{b9b9825f-be10-4f1c-b859-ff4fd8316f12}">
                         <labels>
-                          <label description="Name" languagecode="1033" />
+                          <label description="ProjectSkillName" languagecode="1033" />
                         </labels>
-                        <control id="harpi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="harpi_name" />
+                        <control id="harpi_projectskillname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="harpi_projectskillname" />
                       </cell>
                     </row>
                     <row>
-                      <cell id="{3deb5a3d-69b4-462d-aee2-b2d9cbafa24e}">
+                      <cell id="{852b451f-e31a-4430-ab5b-29e4555063cb}">
                         <labels>
                           <label description="Owner" languagecode="1033" />
                         </labels>

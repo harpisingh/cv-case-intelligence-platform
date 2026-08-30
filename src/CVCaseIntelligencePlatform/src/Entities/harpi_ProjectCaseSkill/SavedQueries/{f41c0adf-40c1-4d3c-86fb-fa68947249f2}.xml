@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{f41c0adf-40c1-4d3c-86fb-fa68947249f2}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="harpi_projectskillname" select="1" icon="1" preview="1">
+        <row name="result" id="harpi_projectcaseskillid">
+          <cell name="harpi_projectskillname" width="300" />
+          <cell name="harpi_projectcase" width="150" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="harpi_projectcaseskill">
+          <attribute name="harpi_projectcaseskillid" />
+          <attribute name="harpi_projectskillname" />
+          <attribute name="createdon" />
+          <order attribute="harpi_projectskillname" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+          <attribute name="harpi_projectcase" />
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active ProjectCaseSkill" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

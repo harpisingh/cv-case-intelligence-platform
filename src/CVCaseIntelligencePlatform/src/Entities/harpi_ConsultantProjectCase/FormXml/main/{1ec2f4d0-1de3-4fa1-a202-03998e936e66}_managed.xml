@@ -22,7 +22,7 @@
                     <row>
                       <cell id="{471f427d-a5bf-4939-8962-6f5ce506b9c5}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Name" languagecode="1033" />
                         </labels>
                         <control id="harpi_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="harpi_name" />
                       </cell>
@@ -30,7 +30,7 @@
                     <row>
                       <cell id="{ad2d1440-049a-4930-91c1-916e6e1355c4}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Owner" languagecode="1033" />
                         </labels>
                         <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
                       </cell>
@@ -38,7 +38,7 @@
                     <row>
                       <cell id="{d5e9e69b-9247-4aa9-a9e0-1a9d7b13b1e8}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="ProjectCase" languagecode="1033" />
                         </labels>
                         <control id="harpi_projectcase" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="harpi_projectcase" />
                       </cell>
@@ -46,7 +46,7 @@
                     <row>
                       <cell id="{bec79ce6-06b4-45a7-8def-c9c2784a0a95}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="StartYear" languagecode="1033" />
                         </labels>
                         <control id="harpi_startyear" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="harpi_startyear" />
                       </cell>
@@ -54,7 +54,7 @@
                     <row>
                       <cell id="{901db2cf-9796-4003-b38c-94dfc9c86aee}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="EndYear" languagecode="1033" />
                         </labels>
                         <control id="harpi_endyear" classid="{5b773807-9fb2-42db-97c3-7a91eff8adff}" datafieldname="harpi_endyear" />
                       </cell>
@@ -62,7 +62,7 @@
                     <row>
                       <cell id="{6154be58-34b4-48fc-904d-a998020c0868}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Consultant" languagecode="1033" />
                         </labels>
                         <control id="harpi_consultant" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="harpi_consultant" />
                       </cell>
@@ -70,7 +70,7 @@
                     <row>
                       <cell id="{f169831c-f9cb-4638-ae97-936e6443a59b}">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Role" languagecode="1033" />
                         </labels>
                         <control id="harpi_role" classid="{4aa28ab7-9c13-4f57-a73d-ad894d048b5f}" datafieldname="harpi_role" />
                       </cell>

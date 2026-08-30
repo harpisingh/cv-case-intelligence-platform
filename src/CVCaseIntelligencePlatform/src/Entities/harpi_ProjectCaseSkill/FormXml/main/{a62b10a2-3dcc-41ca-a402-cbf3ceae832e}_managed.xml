@@ -1,34 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <systemform>
-    <formid>{3909ebac-a432-4ce2-93e6-b343e4663360}</formid>
+    <formid>{a62b10a2-3dcc-41ca-a402-cbf3ceae832e}</formid>
     <IntroducedVersion>1.0</IntroducedVersion>
     <FormPresentation>1</FormPresentation>
     <FormActivationState>1</FormActivationState>
     <form>
       <tabs>
-        <tab verticallayout="true" id="{75814650-b245-433c-b5d5-f0203ff6dbc9}" IsUserDefined="1">
+        <tab verticallayout="true" id="{6874b667-5c95-4333-b800-36a432c771a5}" IsUserDefined="1">
           <labels>
             <label description="General" languagecode="1033" />
           </labels>
           <columns>
             <column width="100%">
               <sections>
-                <section showlabel="false" showbar="false" IsUserDefined="0" id="{6a7a4c92-dda8-427f-a71f-8759b3e45705}">
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{1d1861f2-4e41-46c3-abe3-fa133811b455}">
                   <labels>
                     <label description="General" languagecode="1033" />
                   </labels>
                   <rows>
                     <row>
-                      <cell id="{d2087b4e-3748-472a-a9f2-3dcb1783809f}">
+                      <cell id="{5c6c885c-462a-467d-b2c6-56b5f9865a8b}">
                         <labels>
-                          <label description="CertificationName" languagecode="1033" />
+                          <label description="ProjectSkillName" languagecode="1033" />
                         </labels>
-                        <control id="harpi_certificationname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="harpi_certificationname" />
+                        <control id="harpi_projectskillname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="harpi_projectskillname" />
                       </cell>
                     </row>
                     <row>
-                      <cell id="{c36c5888-6e87-4914-9505-8e922c5bd75c}">
+                      <cell id="{075ec8f6-dd77-4d56-8e27-73920a2a7d35}">
                         <labels>
                           <label description="Owner" languagecode="1033" />
                         </labels>
@@ -36,11 +36,11 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{047a8b91-f1b9-48c6-8258-92f3e4bc76f8}">
+                      <cell id="{172bae9c-25fb-401d-b39f-195280535938}">
                         <labels>
-                          <label description="Vendor" languagecode="1033" />
+                          <label description="ProjectCase" languagecode="1033" />
                         </labels>
-                        <control id="harpi_vendor" classid="{3ef39988-22bb-4f0b-bbbe-64b5a3748aee}" datafieldname="harpi_vendor" />
+                        <control id="harpi_projectcase" classid="{270bd3db-d9af-4782-9025-509e298dec0a}" datafieldname="harpi_projectcase" />
                       </cell>
                     </row>
                   </rows>
