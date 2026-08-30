@@ -98,3 +98,62 @@ Additional Functions:
 - LastReviewed updated using utcNow()
 - Error handling using TRY/CATCH scopes
 - Teams notifications for failed executions
+
+# Application Lifecycle Management (ALM)
+
+## Development Workflow
+
+The CV & Case Intelligence Platform follows a solution-first development approach.
+
+```text
+Pro Playground (DEV)
+        ↓
+ Power Platform Solution
+        ↓
+      PAC CLI
+        ↓
+ Source-Controlled Files
+        ↓
+        Git
+        ↓
+      GitHub
+
+      # Client-Side Architecture
+
+The Consultant table uses JavaScript Web Resources to extend the functionality of the Model-Driven App.
+
+```text
+Consultant Form
+        ↓
+    OnLoad
+        ↓
+ JavaScript Web Resource
+        ↓
+     Client API
+        ↓
+ Dynamic UI Logic
+``
+
+##Event Model
+OnLoad
+  ↓
+Initial form state
+
+OnChange
+  ↓
+Dynamic updates
+
+OnSave
+  ↓
+Save event handling
+
+## Current Client Logic
+Profile Status is used to control the state of Professional Summary.
+Ready for Review
+        ↓
+Disable Professional Summary
+
+Professional Summary Empty
+        ↓
+Display Warning Notification
+``
