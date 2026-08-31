@@ -240,3 +240,58 @@ Dataverse and Outlook connectors were blocked by tenant DLP policies.
 
 Result:
 Error information is delivered directly in Teams while remaining compliant with platform governance policies.
+
+## AD-009: Environment Variables for Configuration
+
+### Decision
+Environment-specific configuration values must be stored in Environment Variables instead of hardcoded values.
+
+### Reason 
+The same solution should be deployable across Development, Test and Production environments without requiring solution changes. 
+
+### Consequences 
+- Configuration is separated from business logic. 
+- Deployments become more predictable. 
+- Environment-specific values can be maintained independently.
+
+## AD-011: Client-Side Logic with JavaScript
+
+### Decision
+
+Dynamic user interface behavior in the Consultant Model-Driven App form will be implemented using JavaScript Web Resources and the Power Platform Client API.
+
+### Reason
+
+Business Rules are suitable for simple scenarios, but JavaScript provides greater flexibility for:
+
+- Dynamic UI behavior
+- Event-driven logic
+- Client-side validation
+- Form notifications
+- Advanced form interactions
+
+The solution requires responsive behavior based on field values and user actions.
+
+### Consequences
+
+- JavaScript is used for client-side user experience.
+- Form logic is organized using namespaces.
+- Logic is triggered through OnLoad, OnChange and OnSave events.
+- Client API is used to interact with Dataverse form data and UI controls.
+- Defensive programming practices should be used to handle missing fields and controls gracefully.
+
+## AD-012: Dataverse Queries Should Be Optimized
+
+### Decision
+
+Dataverse Web API queries should use OData query options such as `$select`, `$filter` and `$orderby` to reduce payload size and improve performance.
+
+### Reason
+
+Retrieving only the required records and columns reduces network traffic, improves response times and minimizes client-side processing.
+
+### Consequences
+
+- All Web API queries should explicitly request only required columns.
+- Filtering should be performed server-side whenever possible.
+- Sorting should be delegated to Dataverse instead of local JavaScript processing.

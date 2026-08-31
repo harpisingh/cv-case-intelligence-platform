@@ -215,3 +215,25 @@ Implemented client-side scripting in the CV & Case Intelligence Platform using J
 ### Outcome
 
 The Consultant form now contains client-side business logic that reacts dynamically to user actions and demonstrates core Power Platform Client API concepts.
+
+## Latest Progress (Day 8)
+
+Extended the solution using Dataverse Web API and Xrm.WebApi.
+
+### Key Achievements
+
+- Learned REST and CRUD fundamentals
+- Implemented Dataverse Web API queries
+- Used Xrm.WebApi.retrieveMultipleRecords()
+- Worked with JSON responses
+- Applied OData query options:
+  - $select
+  - $filter
+  - $orderby
+- Implemented Consultant search scenarios
+- Practiced API debugging and error handling
+- Explored authentication, authorization, alternate keys and Upsert concepts
+
+### Outcome
+
+The solution can now retrieve and process Dataverse data dynamically through client-side JavaScript, extending functionality beyond the data already loaded on the form.
