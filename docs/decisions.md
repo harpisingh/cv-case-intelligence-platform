@@ -323,3 +323,74 @@ Client-side JavaScript alone cannot guarantee enforcement across all entry point
 - Validation is executed in the Dataverse Event Execution Pipeline.
 - Invalid approval attempts are blocked before the operation is completed.
 - The rule is enforced consistently across the entire solution landscape.
+
+## AD-014: Consultant Profile Evaluation Must Be Exposed Through a Custom API
+
+### Decision
+
+Consultant profile evaluation is implemented as a Dataverse Custom API with a dedicated Plug-in implementation.
+
+### Reason
+
+Multiple consumers require access to the same profile evaluation logic.
+
+Examples include:
+
+- Power Automate
+- Model-Driven Apps
+- JavaScript
+- Future AI Agents
+- External integrations
+
+Implementing the logic separately in each consumer would create duplication, increase maintenance effort and risk inconsistent evaluation results.
+
+A reusable Custom API provides a single implementation and a clearly defined API contract.
+
+### Consequences
+
+- Profile evaluation logic is maintained in one place.
+- Multiple consumers can use the same operation.
+- Consistent evaluation results are returned regardless of the caller.
+- The API can evolve without requiring changes across all consumers.
+- Dataverse becomes the central business logic layer.
+
+### API Contract
+
+Operation:
+
+```text
+EvaluateConsultantProfile
+
+### Outputs
+IsProfileComplete
+ProfileScore
+EvaluationMessage
+
+Evaluation Rules
+Profile Complete
+
+A profile is considered complete when all General profile fields are populated:
+
+Name
+Title
+Seniority
+Office
+Department
+Professional Summary
+Profile Score
+
+The score is calculated from both Consultant information and related profile data:
+
+Name
+Title
+Seniority
+Office
+Department
+Professional Summary
+Skills
+Certifications
+Project Cases
+
+Maximum score:
+100
+

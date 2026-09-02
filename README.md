@@ -339,3 +339,92 @@ Dataverse Plug-in
 Server-side business rule enforcement
 
 The Consultant approval process is now enforced directly within Dataverse, ensuring consistent data quality across the entire platform.
+
+## Latest Progress (Day 10)
+
+Extended the platform using a Dataverse Custom API and reusable server-side business logic.
+
+### Key Achievements
+
+- Learned Dataverse Custom API architecture
+- Understood Custom API vs Plug-ins
+- Implemented a bound Custom API
+- Designed a reusable API contract
+- Worked with Request and Response concepts
+- Implemented InputParameters and OutputParameters
+- Used IOrganizationService to retrieve Dataverse data
+- Consumed the Custom API from Power Automate
+- Applied server-side profile evaluation logic
+- Returned calculated results through API response properties
+- Debugged and resolved Dataverse data type issues
+
+### Evaluate Consultant Profile
+
+Custom API:
+
+```text
+harpi_EvaluateConsultantProfile
+
+Purpose:
+Evaluate whether a consultant profile is complete and calculate an overall profile quality score.
+
+### Outputs
+IsProfileComplete
+ProfileScore
+EvaluationMessage
+
+Profile Complete Evaluation
+
+The profile is considered complete when the following General information is populated:
+
+Name
+Title
+Seniority
+Office
+Department
+Professional Summary
+Profile Score Evaluation
+
+The score is calculated from profile information and related records.
+
+Categories:
+
+Name
+Title
+Seniority
+Office
+Department
+Professional Summary
+Skills
+Certifications
+Project Cases
+
+Maximum score:
+100
+
+### Architecture
+Power Automate
+        ↓
+EvaluateConsultantProfile
+        ↓
+Dataverse Custom API
+        ↓
+EvaluateConsultantProfilePlugin
+        ↓
+Consultant Evaluation Logic
+        ↓
+Response Properties
+
+Outcome
+
+The solution now exposes reusable consultant profile evaluation logic through a Dataverse Custom API.
+
+The API can be consumed by:
+
+Power Automate
+JavaScript
+Model-Driven Apps
+Future AI Agents
+External integrations
+
+This prevents duplication of business logic across consumers and ensures consistent evaluation results throughout the platform.
