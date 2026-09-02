@@ -76,11 +76,11 @@ namespace CVCI.Plugins
                     : preImage.GetAttributeValue<OptionSetValue>(
                         "harpi_profilestatus");
 
-            string title =
+            OptionSetValue title =
                 target.Contains("harpi_title")
-                    ? target.GetAttributeValue<string>(
+                    ? target.GetAttributeValue<OptionSetValue>(
                         "harpi_title")
-                    : preImage.GetAttributeValue<string>(
+                    : preImage.GetAttributeValue<OptionSetValue>(
                         "harpi_title");
 
             string professionalSummary =
@@ -117,7 +117,7 @@ namespace CVCI.Plugins
                 "Consultant is Approved. Validating profile."
             );
 
-            if (string.IsNullOrWhiteSpace(title))
+            if (title == null)
             {
                 tracingService.Trace(
                     "Validation failed. Title missing."
