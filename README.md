@@ -237,3 +237,105 @@ Extended the solution using Dataverse Web API and Xrm.WebApi.
 ### Outcome
 
 The solution can now retrieve and process Dataverse data dynamically through client-side JavaScript, extending functionality beyond the data already loaded on the form.
+
+## Latest Progress (Day 9)
+
+Implemented server-side validation using a Dataverse Plug-in.
+
+### Key Achievements
+
+- Learned Dataverse Plug-in architecture
+- Implemented C# Plug-in development
+- Used IPlugin and Execute()
+- Worked with IPluginExecutionContext
+- Used Target entities and PreEntityImages
+- Implemented ITracingService logging
+- Applied Filtering Attributes
+- Worked with Event Execution Pipeline stages
+- Registered and deployed a Plug-in Assembly
+- Registered Plug-in Steps and Images
+- Implemented server-side approval validation
+
+### Consultant Approval Validation
+
+Business Rule:
+
+Approved Consultants must always contain:
+
+- Title
+- Professional Summary
+
+The validation is enforced server-side using a Dataverse Plug-in and applies regardless of whether updates originate from:
+
+- Model-Driven Apps
+- Canvas Apps
+- Power Automate
+- Dataverse APIs
+- External integrations
+
+### Outcome
+
+The solution now contains both client-side and server-side validation layers:
+
+## Latest Progress (Day 9) 
+Extended the solution using Dataverse Plug-ins and server-side business logic. 
+
+### Key Achievements 
+- Learned Dataverse Plug-in architecture 
+- Built and deployed a C# Plug-in 
+- Implemented IPlugin and Execute() 
+- Worked with IPluginExecutionContext 
+- Used Target entities and PreEntityImages 
+- Implemented ITracingService logging 
+- Applied Filtering Attributes 
+- Registered Plug-in Assembly, Step and Image 
+- Implemented server-side validation logic 
+- Debugged runtime issues using Plugin Trace Logs 
+- Resolved OptionSetValue vs String datatype issues 
+- Applied Strong Name Signing for Dataverse deployment 
+### Consultant Approval Validation 
+Business Rule: Approved Consultants must always contain: 
+- Title 
+- Professional Summary 
+
+The validation is enforced server-side and therefore applies regardless of whether updates originate from: 
+- Model-Driven Apps 
+- Canvas Apps 
+- Power Automate 
+- Dataverse Web API 
+- Imports 
+- External integrations 
+
+### Important Design Lesson 
+The first implementation only validated updates when Profile Status changed. 
+
+A design review identified an important business rule gap: 
+
+Approved 
+↓ 
+Title removed later 
+↓ 
+Profile becomes invalid
+
+The solution was redesigned to use:
+Target
++
+PreImage
+↓
+Effective Record State
+↓
+Validation
+
+This ensures that Approved Consultants remain valid regardless of which relevant field is modified.
+
+### Outcome
+The solution now contains multiple validation layers:
+JavaScript
+        ↓
+Immediate client-side feedback
+
+Dataverse Plug-in
+        ↓
+Server-side business rule enforcement
+
+The Consultant approval process is now enforced directly within Dataverse, ensuring consistent data quality across the entire platform.

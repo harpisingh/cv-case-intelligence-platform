@@ -295,3 +295,31 @@ Retrieving only the required records and columns reduces network traffic, improv
 - All Web API queries should explicitly request only required columns.
 - Filtering should be performed server-side whenever possible.
 - Sorting should be delegated to Dataverse instead of local JavaScript processing.
+
+## AD-013: Critical Approval Validation Must Be Enforced Server-Side
+
+### Decision
+
+Consultant approval validation must be implemented as a Dataverse Plug-in running server-side.
+
+### Reason
+
+The approval rule applies regardless of how Consultant data is modified.
+
+Data may originate from:
+
+- Model-Driven Apps
+- Canvas Apps
+- Power Automate
+- Dataverse Web API
+- Imports
+- External integrations
+
+Client-side JavaScript alone cannot guarantee enforcement across all entry points.
+
+### Consequences
+
+- Approved Consultants must always contain mandatory profile information.
+- Validation is executed in the Dataverse Event Execution Pipeline.
+- Invalid approval attempts are blocked before the operation is completed.
+- The rule is enforced consistently across the entire solution landscape.
