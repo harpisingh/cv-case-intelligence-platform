@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Xrm.Sdk;
+using Microsoft.Xrm.Sdk.Query;
 
 namespace CVCI.Plugins
 {
@@ -27,46 +28,178 @@ namespace CVCI.Plugins
                 "EvaluateConsultantProfile API started."
             );
 
-            tracingService.Trace(
-                "Message Name: " + context.MessageName
-            );
+            EntityReference consultantRef =
+                (EntityReference)context.InputParameters["Target"];
 
             tracingService.Trace(
-                "Stage: " + context.Stage
+                "Consultant Id: " + consultantRef.Id
             );
 
-            tracingService.Trace(
-                "Depth: " + context.Depth
-            );
-
-            tracingService.Trace(
-                "Organization Service created."
-            );
-
-            tracingService.Trace(
-                "Listing Input Parameters..."
-            );
-
-            foreach (string parameterName in context.InputParameters.Keys)
-            {
-                tracingService.Trace(
-                    "Input Parameter: " + parameterName
+            Entity consultant =
+                service.Retrieve(
+                    "harpi_consultant",
+                    consultantRef.Id,
+                    new ColumnSet(
+                        "harpi_name",
+                        "harpi_title",
+                        "harpi_seniority",
+                        "harpi_office",
+                        "harpi_department",
+                        "harpi_professionalsummary"
+                    )
                 );
 
-                if (context.InputParameters[parameterName] != null)
-                {
-                    tracingService.Trace(
-                        "Input Parameter Type: " +
-                        context.InputParameters[parameterName]
-                            .GetType()
-                            .FullName
-                    );
-                }
+            tracingService.Trace(
+                "Consultant retrieved successfully."
+            );
+
+            string name =
+                consultant.GetAttributeValue<string>(
+                    "harpi_name");
+
+            OptionSetValue title =
+                consultant.GetAttributeValue<OptionSetValue>(
+                    "harpi_title");
+
+            OptionSetValue seniority =
+                consultant.GetAttributeValue<OptionSetValue>(
+                    "harpi_seniority");
+
+            EntityReference office =
+                consultant.GetAttributeValue<EntityReference>(
+                    "harpi_office");
+
+            EntityReference department =
+                consultant.GetAttributeValue<EntityReference>(
+                    "harpi_department");
+
+            string professionalSummary =
+                consultant.GetAttributeValue<string>(
+                    "harpi_professionalsummary");
+
+            bool isProfileComplete =
+                !string.IsNullOrWhiteSpace(name)
+                && title != null
+                && seniority != null
+                && office != null
+                && department != null
+                && !string.IsNullOrWhiteSpace(
+                    professionalSummary);
+
+            int profileScore = 0;
+
+            if (!string.IsNullOrWhiteSpace(name))
+                profileScore += 10;
+
+            if (title != null)
+                profileScore += 10;
+
+            if (seniority != null)
+                profileScore += 10;
+
+            if (office != null)
+                profileScore += 10;
+
+            if (department != null)
+                profileScore += 10;
+
+            if (!string.IsNullOrWhiteSpace(
+                professionalSummary))
+                profileScore += 20;
+
+            int skillCount = GetRelatedRecordCount(
+                service,
+                "harpi_consultantskill",
+                "harpi_consultant",
+                consultantRef.Id);
+
+            int certificationCount = GetRelatedRecordCount(
+                service,
+                "harpi_consultantcertification",
+                "harpi_consultant",
+                consultantRef.Id);
+
+            int projectCaseCount = GetRelatedRecordCount(
+                service,
+                "harpi_consultantprojectcase",
+                "harpi_consultant",
+                consultantRef.Id);
+
+            if (skillCount > 0)
+                profileScore += 10;
+
+            if (certificationCount > 0)
+                profileScore += 10;
+
+            if (projectCaseCount > 0)
+                profileScore += 10;
+
+            string evaluationMessage;
+
+            if (!isProfileComplete)
+            {
+                evaluationMessage =
+                    "Profile is incomplete. Required information is missing.";
+            }
+            else if (profileScore == 100)
+            {
+                evaluationMessage =
+                    "Profile is staffing ready.";
+            }
+            else
+            {
+                evaluationMessage =
+                    $"Profile is complete but can be improved. Current score: {profileScore}.";
             }
 
             tracingService.Trace(
-                "EvaluateConsultantProfile API finished."
+                $"Profile Complete: {isProfileComplete}"
             );
+
+            tracingService.Trace(
+                $"Profile Score: {profileScore}"
+            );
+
+            tracingService.Trace(
+                $"Message: {evaluationMessage}"
+            );
+
+            context.OutputParameters[
+                "harpi_IsProfileComplete"] =
+                isProfileComplete;
+
+            context.OutputParameters[
+                "harpi_ProfileScore"] =
+                profileScore;
+
+            context.OutputParameters[
+                "harpi_EvaluationMessage"] =
+                evaluationMessage;
+
+            tracingService.Trace(
+                "Response created successfully."
+            );
+        }
+
+        private static int GetRelatedRecordCount(
+            IOrganizationService service,
+            string tableName,
+            string consultantLookup,
+            Guid consultantId)
+        {
+            QueryExpression query =
+                new QueryExpression(tableName)
+                {
+                    ColumnSet = new ColumnSet(false)
+                };
+
+            query.Criteria.AddCondition(
+                consultantLookup,
+                ConditionOperator.Equal,
+                consultantId);
+
+            return service.RetrieveMultiple(
+                query).Entities.Count;
         }
     }
 }
