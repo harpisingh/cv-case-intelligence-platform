@@ -6,3 +6,21 @@
 
 # MSBuild Binary and Structured Log
 *.binlog
+
+# Visual Studio
+.vs/
+
+# Build artifacts
+bin/
+obj/
+
+# NuGet packages
+packages/
+
+# User files
+*.user
+*.suo
+
+# Cache
+*.cache
+*.binlog

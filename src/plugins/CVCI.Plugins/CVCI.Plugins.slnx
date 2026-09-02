@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CVCI.Plugins.csproj" Id="b1986d13-f0f1-4c8a-857c-b45bcde17265" />
+  <Properties Name="CRMSolutionProperties">
+    <Property Name="SolutionIsBoundToCRM" Value="True" />
+  </Properties>
+</Solution>
