@@ -65,12 +65,12 @@ namespace CVCI.Plugins
                 consultant.GetAttributeValue<OptionSetValue>(
                     "harpi_seniority");
 
-            EntityReference office =
-                consultant.GetAttributeValue<EntityReference>(
+            OptionSetValue office =
+                consultant.GetAttributeValue<OptionSetValue>(
                     "harpi_office");
 
-            EntityReference department =
-                consultant.GetAttributeValue<EntityReference>(
+            OptionSetValueCollection department =
+                consultant.GetAttributeValue<OptionSetValueCollection>(
                     "harpi_department");
 
             string professionalSummary =
@@ -83,6 +83,7 @@ namespace CVCI.Plugins
                 && seniority != null
                 && office != null
                 && department != null
+                && department.Count > 0
                 && !string.IsNullOrWhiteSpace(
                     professionalSummary);
 
@@ -100,8 +101,11 @@ namespace CVCI.Plugins
             if (office != null)
                 profileScore += 10;
 
-            if (department != null)
+            if (department != null &&
+                department.Count > 0)
+            {
                 profileScore += 10;
+            }
 
             if (!string.IsNullOrWhiteSpace(
                 professionalSummary))
