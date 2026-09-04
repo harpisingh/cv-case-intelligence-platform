@@ -31,7 +31,6 @@ Learning:
 Development environments should provide sufficient permissions for customization and client-side development.
 
 ---
-
 ## JavaScript Web Resource
 
 Created:

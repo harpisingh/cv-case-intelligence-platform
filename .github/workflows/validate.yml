@@ -1,5 +1,4 @@
 name: Validate Repository
-
 on:
   push:
     branches:
